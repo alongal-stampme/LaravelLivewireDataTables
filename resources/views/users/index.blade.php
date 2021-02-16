@@ -17,10 +17,15 @@
             font-family: 'Nunito';
         }
     </style>
+
+    @livewireStyles
 </head>
     <body>
         <div class="container mx-auto">
             <div class="text-3xl text-center my-10">Users</div>
+            <livewire:users-table />
         </div>
+
+        @livewireScripts
     </body>
 </html>
