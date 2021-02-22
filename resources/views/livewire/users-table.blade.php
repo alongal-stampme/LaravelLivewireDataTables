@@ -5,29 +5,37 @@
             <div class="flex space-x-4">
                 <div class="w-3/4">
                     <div class="mt-1">
-                        <input type="text"
+                        <input wire:model.debounce.300="search"
+                               type="text"
                                name="email"
                                id="email"
-                               class="border mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md" placeholder="you@example.com">
+                               class="border mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+                               placeholder="you@example.com">
                     </div>
                 </div>
                 <div class="w-1/4">
-                    <select id="id"
-                            name="ID"
+                    <select wire:model="orderBy"
+                        id="id"
+                            name="id"
                             class="border mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>Descending</option>
+                        <option value="id">ID</option>
+                        <option value="name">Name</option>
+                        <option value="email">Email</option>
+                        <option value="created_at">Sign Up Date</option>
                     </select>
                 </div>
                 <div class="w-1/4">
-                    <select id="order"
+                    <select wire:model="orderAsc"
+                            id="order"
                             name="order"
                             class="border mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
-                        <option>Ascending</option>
-                        <option>Descending</option>
+                        <option value="1">Ascending</option>
+                        <option value="0">Descending</option>
                     </select>
                 </div>
                 <div class="w-1/4">
-                    <select id="location"
+                    <select wire:model="perPage"
+                            id="location"
                             name="location"
                             class="border mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md">
                         <option>10</option>
